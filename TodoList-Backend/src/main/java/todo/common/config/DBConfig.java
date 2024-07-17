@@ -72,7 +72,7 @@ public class DBConfig {
 		return sfb.getObject();
 	}
 	
-	// 기본 SQL 실행한다음 insert update delete 같은 경우 commit이나 rollback 처리
+	// 기본 SQL 실행한다음 insert update delete 실행
 	@Bean
 	public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sf) {
 		return new SqlSessionTemplate(sf);
@@ -83,4 +83,10 @@ public class DBConfig {
 	public DataSourceTransactionManager dataSourceTransactionManager(DataSource dataSource) {
 		return new DataSourceTransactionManager(dataSource);
 	}
+	
+	/** SqlSessionTemplate DataSourceTransactionManager 차이
+	 * SqlSessionTemplate -> insert select update delete 실행
+	 * DataSourceTransactionManager -> SqlSessionTemplate 실행한 결과를 Commit, Rollback
+	 * DB완벽히 저장을 하거나 되돌리는 작업
+	 */
 }
