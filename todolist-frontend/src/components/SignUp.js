@@ -86,8 +86,8 @@ const Signup = () => {
                     value={pw}
                     />
             </label>
-            <label> PW CHECK : 
-                <input type="paasword"
+            <label> PWCHECK : 
+                <input type="password"
                     onChange={e => {setPwCheck(e.target.value)}}
                     value={pwCheck}
                     />
@@ -105,3 +105,4 @@ const Signup = () => {
         </div>
     )
 }
+export default Signup;

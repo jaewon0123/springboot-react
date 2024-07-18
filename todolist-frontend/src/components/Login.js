@@ -1,21 +1,27 @@
 import React, { useContext, useState } from "react";
-import LoginContext from "./LoginContext";
+
+import TodoListContext from "./TodoListContext";
 
 const Login = () => {
-  const { loginMember, setLoginMember } = useContext(LoginContext);
 
+  const { loginMember, setLoginMember } = useContext(TodoListContext);
+
+ 
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
 
+
   const login = () => {
     
-    fatch('/login', {
+
+    fetch('/login', {
         method: 'POST',
+
         headers : {
-            "Content-Type" : "application/json",
-            "Accept" : "applcation/json"
+        "Content-Type" : "application/json", 
+        "Accept" : "application/json"
         },
-        body : JSON.stringify({id : id, pw : pw})
+        body : JSON.stringify({id : id, pw : pw}) 
     })
     .then(response => response.json())
     .then(map => {
@@ -27,19 +33,19 @@ const Login = () => {
         }
 
         setLoginMember(map.loginMember);
-
         setId('');
         setPw('');
-        alert('로그인 성공하셨습니다.')
+        alert('로그인 성공~!')
+        console.log('로그인 멤버 : ' + id)
     })
   }
 
-  const logout = () => {
-    setId('');
-    setPw('');
-    setLoginMember(null);
-    console.log('로그인 멤버 : ' + id)
-  }
+    const logout = () => {
+      setId('');
+      setPw('');
+      setLoginMember(null);
+      console.log('로그인 멤버 : ' + id)
+    }
 
   return (
     <div className="login-container">
@@ -65,13 +71,16 @@ const Login = () => {
               />
             </td>
             <td>
-              <button onClick={login}>로그인</button>
+                <button onClick={login}>로그인</button>
             </td>
           </tr>
         </tbody>
       </table>
-      {loginMember && <button onClick={logout}>로그아웃</button>}
+      {loginMember && (
+        <button onClick={logout}>로그아웃</button>
+      )}
     </div>
   );
 };
+
 export default Login;

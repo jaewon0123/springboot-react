@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Signup from './components/SignUp';
+import Login from './components/Login';
+import TodoList from './components/TodoList';
+import TodoListContext from './components/TodoListContext';
+
 
 function App() {
+  const [signUpView, setSignUpView] = useState(false);
+
+  const [loginMember, setLoginMember] = useState(null);
+
+  const [todoList, setTodoList] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TodoListContext.Provider value={{loginMember, setLoginMember, todoList, setTodoList}}>
+      <button onClick={() => {setSignUpView(!signUpView)}}>
+      {signUpView ? ('회원 가입 닫기') : ('회원 가입 열기')}
+      </button>
+      <div className='signup-wrapper'>
+        {signUpView === true && (<Signup/>)}
+      </div>
+
+      <h1>Todo List</h1>
+      <Login/>
+      <hr/>
+      {loginMember && (<TodoList/>)}
+    </TodoListContext.Provider>
   );
 }
 
