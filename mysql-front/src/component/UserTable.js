@@ -10,7 +10,7 @@ const 컴포넌트명 = ({특정값}) => { }
 //UserTable 컴포넌트는 사이트에 회원가입한 유저들의 정보를 보는 공간
 // App.js 전달받은 User값들을 받아와 유저 정보를 보여줄 것
 const UserTable = ({users}) => {
-
+    
     return (
         <table>
             <thead>
@@ -28,7 +28,7 @@ const UserTable = ({users}) => {
                         <td>{user.name}</td>
                         <td>{user.email}</td>
                         <td>
-                            <button>유저 삭제하기</button>
+                            <button value={users}>유저 삭제하기</button>
                         </td>
                     </tr>
                 ))}
