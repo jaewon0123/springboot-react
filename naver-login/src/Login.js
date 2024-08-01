@@ -1,13 +1,17 @@
 import React from "react";
 
 const Login = () => {
-    return (
-        <>
-        <a href="http://localhost:9010/api/naverLogin">
-            <img height="50" src="http://static.nid.naver.com/oauth/small_g_in.PNG"/>
-        </a>
-        </>
-    )
-}
+  return (
+    <div>
+      <a href="http://localhost:9010/naverLogin">
+        <img
+          height="50"
+          src="http://static.nid.naver.com/oauth/small_g_in.PNG"
+          alt="Naver Login"
+        />
+      </a>
+    </div>
+  );
+};
 
 export default Login;
