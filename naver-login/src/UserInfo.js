@@ -48,6 +48,8 @@ function UserInfo() {
   if(loading) {
     return <div>데이터 정보 가져오는 중...</div>
   }
+
+  
   return (
     <>
     <h1>유저정보</h1>
@@ -55,20 +57,29 @@ function UserInfo() {
         <div>
             <input type="text" value={userInfo.response.id} disabled/><br/>
             <input type="email" value={userInfo.response.email} disabled/><br/>
-            <input type="email" value={userInfo.response.nickname} disabled/><br/>
+            <input type="text" value={userInfo.response.nickname} disabled/><br/>
             <input type="text" value={userInfo.response.name} disabled/><br/>
             <input type="image" src={userInfo.response.profile_image} disabled width={100} height={100}/><br/>
             <input type="text" value={userInfo.response.gender} disabled/>
             {/* 네이버에서 가져온 id 값을 input에 넣어주고 수정하지 못하게 막음처리 */}
+            
         </div>
     ) 
     : (
     <p>유저를 찾을 수 없습니다.</p>
     )}
-    <div>
+      <div>
         <h2>회원가입에 필요한 아이디 및 비밀번호 작성하기</h2>
-        <input type="text" />
-    </div>
+        <form>
+          <label> ID :
+          <input type="text" />
+          </label>
+          <label> PW :
+          <input type="password" />
+          </label><br/>
+          <button onClick={addbutton}>회원가입</button>
+        </form>
+      </div>
     </>
   )
 }
