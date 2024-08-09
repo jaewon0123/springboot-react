@@ -21,7 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/board" element={<Board />} />
-        <Route path="/profile" element={<Profiler />} />
+        <Route path="/profile" element={<Profile/>} />
       </Routes>
       <Footer />
     </Router>
