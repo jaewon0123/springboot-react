@@ -1,33 +1,31 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { Profiler } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Board from "./component/Board";
+import Profile from "./component/Profile";
+import Header from "./component/layout/Header";
+import Main from "./component/Main";
+import Footer from "./component/layout/Footer";
+import Banner from "./component/layout/Banner";
 
+// front end api url 설정
+// -> react router  dom 이용해서 Router 설정
+
+// front end api url
+// Board path = "/board"
+// Profile path = "/profile"
 function App() {
-    const [title, setTitle] = useState('');
-    const [content, setContent] = useState('');
-    const [files, setFiles] = useState([]);
-
-    
-
-    return (
-        <div className="App">
-            <form>
-                <div>
-                    <label>제목:</label>
-                    <input/>
-                </div>
-                <div>
-                    <label>내용:</label>
-                    <textarea  />
-                </div>
-                <div>
-                    <label>이미지선택
-                    <input type="file" multiple style={{display:"none"}} />
-                    </label>
-                </div>
-                <button>Submit</button>
-            </form>
-        </div>
-    );
+  return (
+    <Router>
+      <Banner />
+      <Header />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/board" element={<Board />} />
+        <Route path="/profile" element={<Profiler />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
 }
 
 export default App;

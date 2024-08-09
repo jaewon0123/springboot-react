@@ -114,6 +114,8 @@ export const TodoList = () => {
         //삭제 안될 때 문제 보여주기 왜 문제가 생겼는지 개발자용 콘솔창에서만 보여주는 것
         .catch(e => console.log(e));
     };
+
+    
     return (
       <div>
         <h1>{loginMember.name}의 할 일 목록 보기</h1>

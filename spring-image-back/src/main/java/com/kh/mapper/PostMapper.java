@@ -8,7 +8,7 @@ import com.kh.dto.Post;
 
 @Mapper
 public interface PostMapper {
+	
 	List<Post> findAll();
 	void insertPost(Post post);
-	void insertImage();
 }
