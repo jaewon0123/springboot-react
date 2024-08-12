@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.kh.dto.Post;
 import com.kh.dto.UserProfile;
 import com.kh.mapper.ProfileMapper;
 
@@ -73,5 +74,12 @@ public class ProfileServiceImpl implements ProfileService {
 		up.setUsername(username);
 		up.setProfileImageUrl(String.join(",", fileNames));
 		insertProfile(up); // set으로 추가된 값을 DB에 넣어주기
+	}
+	
+	@Override
+	public void updatePost(Post post) {
+		// insertPost 그대로 쓰면됨
+		// 바탕화면에 이미지가 저장된 폴더에서 기존이미지를 삭제
+		
 	}
 }

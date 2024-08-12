@@ -7,10 +7,16 @@
 	<select id="findAll" resultType="com.kh.dto.Post">
 		select * from posts
 	</select>
-	
+
 	<insert id="insertPost" parameterType="com.kh.dto.Post">
-	<!-- posts 게시글 테이블에 title = 제목 content = 내용 작성 -->
-		insert into posts (title, content, image_url) values(#{title}, #{content}, #{imageUrl})
+		<!-- posts 게시글 테이블에 title = 제목 content = 내용 작성 -->
+		insert into posts (title, content, image_url) values(#{title},
+		#{content}, #{imageUrl})
 	</insert>
-	
+	<update id="updatePost" parameterType="com.kh.dto.Post">
+		UPDATE posts
+		Set title = #{title}, content = #{content}, image_url =
+		#{imageUrl}
+		WHERE id = #{id}
+	</update>
 </mapper>

@@ -11,4 +11,9 @@
 		insert into user_profiles(username, profile_image_url)
 		values (#{username}, #{profileImageUrl})
 	</insert>
+	
+	<update id="updateProfile" parameterType="com,kh.dto.UserProfile">
+		update user_profiles
+		set 
+	</update>
 </mapper>

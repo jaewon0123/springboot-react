@@ -28,7 +28,7 @@
     이미지를 클릭했을 때 이미지 크기 설정
     숫자가 클수록 이미지가 커짐
     */
-    transform: scale(4.1);
+    transform: scale(10.1);
 }
 
 .profile-thumbnail img {
