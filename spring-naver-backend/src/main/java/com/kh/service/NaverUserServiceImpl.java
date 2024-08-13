@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kh.dto.User;
-import com.kh.mapper.UserMapper;
+import com.kh.dto.NaverUser;
+import com.kh.mapper.NaverUserMapper;
 /*
  * implements 로 상속받는 인터페이스 서비스는
  * 기능에 대한 목록이 작성이 되어있을 뿐이지
@@ -16,27 +16,17 @@ import com.kh.mapper.UserMapper;
  * 설정이 안된 목록이 있으면 빨간 엑스박스가 뜸
  */
 @Service // 서비스 기능을 상세하게 작성해주는 공간
-public class UserServiceImpl implements UserService {
+public class NaverUserServiceImpl implements NaverUserService {
 	@Autowired
-	private UserMapper userMapper;
+	private NaverUserMapper userMapper;
 	
 	@Override
-	public List<User> findAll() {
+	public List<NaverUser> findAll() {
 		return userMapper.findAll();
 	}
 	
 	@Override
-	public void insertUser(User user) {
-		userMapper.insertUser(user);
-	}
-	
-	@Override
-	public void deleteUser(int id) {
-		userMapper.deleteUser(id);
-	}
-	
-	@Override
-	public void updateUser(User user) {
-		userMapper.updateUser(user);
+	public void insertNaverUser(NaverUser user) {
+		userMapper.insertNaverUser(user);
 	}
 }
