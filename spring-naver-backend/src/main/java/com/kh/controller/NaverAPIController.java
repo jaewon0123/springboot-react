@@ -37,7 +37,7 @@ public class NaverAPIController {
 	private String state;
 
 	
-	@GetMapping("/naverLogin") // localhost:9010/api/naverLogin
+	@GetMapping("/signup/naver") // localhost:9010/api/naverLogin
 	public String naverLogin() {
 		String api_url = "https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=" + clientId + "&redirect_uri=" + redirectUri + "&state=" + state;
 		return "<a href='"+ api_url + "'><img height='50' src='http://static.nid.naver.com/oauth/small_g_in.PNG'/></a>";
@@ -58,7 +58,7 @@ public class NaverAPIController {
 		String accessToken = getToken(response); //위 주소에서 작성한 토큰을 가져오겠다.
 		
 		//여기서 응답에 대한 결과를 전달 -> 나중에 프로젝트 합칠 때 지울 주소
-		String redirectUrl = "http://localhost:3000/userinfo?access_token=" + accessToken;
+		String redirectUrl = "http://localhost:3000/signup/naver?access_token=" + accessToken;
 		HttpHeaders header = new HttpHeaders();
 		header.add("Location", redirectUrl);
 		return new ResponseEntity<>(header,HttpStatus.FOUND); // 프론트에 제대로 전달했는지 체크
