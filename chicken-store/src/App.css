@@ -1,0 +1,21 @@
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+
+.app-container h1 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #333;
+}
+
+.chicken-add {
+  border: none;
+  background-color: rgb(192, 226, 240);
+  color: rgb(66, 66, 66);
+  padding: 10px 20px;
+  
+}
