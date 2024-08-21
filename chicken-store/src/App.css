@@ -10,12 +10,24 @@
   text-align: center;
   font-size: 2.5em;
   color: #333;
+  margin-bottom: 20px;
 }
 
-.chicken-add {
-  border: none;
-  background-color: rgb(192, 226, 240);
-  color: rgb(66, 66, 66);
+.chicken-register-button {
+  display: block;
+  /* 상= 12시 우 = 3시 하 = 6시 좌 = 9시 */
+  margin: 0 auto 20px auto;
   padding: 10px 20px;
-  
+  font-size: 1.2em;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.chicken-register-button:hover {
+  background-color: #218838;
+  transform: scale(1.05);
 }
