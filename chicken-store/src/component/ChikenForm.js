@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import '../css/ChickenForm.css';
+import { useNavigate } from "react-router-dom";
 
 const ChickenForm = () => {
     const [chickenName, setChickenName] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
 
+    const navigate = useNavigate();
     const 전달데이터 = {
         chickenName,
         description,
@@ -18,6 +20,7 @@ const ChickenForm = () => {
         .then(response => {
             // 데이터 무사히 전달했을 경우
             alert('등록이 완료되었습니다.');
+            navigate("/");
         })
         .catch(e => {
             alert('메뉴 등록에 실패하였습니다.')
