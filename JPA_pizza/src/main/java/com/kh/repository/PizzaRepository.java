@@ -21,5 +21,5 @@ public interface PizzaRepository extends JpaRepository<Kh_pizza, Integer> {
 	// Like %name% = 문자열 중간에 찾고자하는 name 이 들어가는 모든 값 찾기
 	// Like name% = 문자열 시작이 찾고자하는 name으로 시작하는 모든 값 찾기
 	// IgnoreCase = 대소문자 구분X
-	List<Kh_pizza> findByNameContainingIgnoreCase(String query);
+	List<Kh_pizza> findByPizzaNameContainingIgnoreCase(String query);
 }

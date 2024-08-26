@@ -23,6 +23,6 @@ public class PizzaService {
 	}
 	// 피자 검색하기
 	public List<Kh_pizza> searchPizza(String query) {
-		return pizzaRepository.findByNameContainingIgnoreCase(query);
+		return pizzaRepository.findByPizzaNameContainingIgnoreCase(query);
 	}
 }
