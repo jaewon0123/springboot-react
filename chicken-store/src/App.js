@@ -11,8 +11,8 @@ function App () {
 
     return (
         <Router>
+            <Header/>
             <Routes>
-                <Header/>
                 <Route path='/' element={<MainRouter/>}/>
                 {/* Routes 안에는 Route로 설정된 태그만 들어올 수 있음 <MainRouter/>*/}
                 <Route path='/chicken-detail/:id' element={<ChickenDetail/>}/>

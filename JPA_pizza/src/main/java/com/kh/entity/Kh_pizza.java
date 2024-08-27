@@ -24,5 +24,5 @@ public class Kh_pizza {
 	
 	private String pizzaName;
 	private String description;
-	private double prive;
+	private double price;
 }

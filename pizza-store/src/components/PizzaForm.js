@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import '../css/PizzaForm.css';
 
 const PizzaForm = () => {
   const [pizzaName, setPizzaName] = useState("");
@@ -14,7 +15,7 @@ const PizzaForm = () => {
   // 스프링부트 연결 후 input에 작성한 데이터 전달
   const HandleRegister = () => {
     axios
-      .post("http://localhost9090/api/pizza", 전달데이터)
+      .post("http://localhost:9090/api/pizza", 전달데이터)
       .then((response) => alert("메뉴가 성공적으로 등록되었습니다."))
       .catch((err) => alert("등록에 실패하였습니다."));
   };
@@ -23,6 +24,7 @@ const PizzaForm = () => {
       <label>
         메뉴 이름 :
         <input
+          type="text"
           value={pizzaName}
           onChange={(e) => setPizzaName(e.target.value)}
         />
@@ -30,13 +32,14 @@ const PizzaForm = () => {
       <label>
         메뉴 설명 :
         <input
+          type="text"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
       </label>
       <label>
         메뉴 가격 :
-        <input value={price} onChange={(e) => setPrice(e.target.value)} />
+        <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} />
       </label>
       <button onClick={HandleRegister}>등록하기</button>
     </div>
